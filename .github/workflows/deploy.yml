@@ -26,4 +26,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "dist/*"
-          target: "/home/youruser/public_html"
+          target: "/home/s7p8th2p9var/public_html/"
