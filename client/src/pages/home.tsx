@@ -76,14 +76,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           
           {/* Logo and Future Proof - Compact */}
-          <div className="text-center mb-8 fade-in">
-            <div className="mb-4 flex items-center justify-center">
+          <div className="text-center mb-1 fade-in">
+            <div className="mb-8 flex items-center justify-center">
               <DecineLogo 
-                className="inline-block"
-                width="400"
+                className="inline-block max-w-none"
+                width="400px"
               />
             </div>
-            <p className="text-gray-500 font-medium tracking-wider uppercase text-[31px]">
+            <p className="font-bold tracking-widest uppercase text-[42px]" style={{ color: '#6c9490' }}>
               Future Proof
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function Home() {
                 
                 {/* Text overlay on image */}
                 <div className="absolute bottom-8 left-8 right-8 text-center">
-                  <h2 className="text-white text-4xl md:text-5xl font-light tracking-wider uppercase">
+                  <h2 className="text-white text-5xl md:text-6xl font-light tracking-widest uppercase">
                     Decentralised Film Finance
                   </h2>
                 </div>
@@ -138,7 +138,7 @@ export default function Home() {
           {/* Coming Soon Badge - Simple rectangle design */}
           <div className="text-center mb-8 fade-in">
             <div className="inline-block border-4 border-black rounded-3xl bg-white px-12 py-8 text-center">
-              <h1 className="coming-soon-text text-4xl uppercase text-black m-0 text-left pl-[4px] pr-[4px] ml-[-4px] mr-[-4px] mt-[-12px] mb-[-12px] pt-[-4px] pb-[-4px]">
+              <h1 className="coming-soon-text text-4xl uppercase text-black m-0">
                 COMING<br/>SOON
               </h1>
             </div>
