@@ -31,5 +31,4 @@ jobs:
           target: "/home/s7p8th2p9var/public_html"
           strip_components: 1
           overwrite: true
-          clean: true
-
+       
