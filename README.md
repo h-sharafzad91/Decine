@@ -1,159 +1,86 @@
+# DeCine — Blockchain-Based Film Finance
 
-# DeCine – Decentralized Film Finance Platform
+DeCine explores a Web3 model for film financing: film projects, investor participation, transparent funding activity, and community-oriented governance.
 
-DeCine is a blockchain-powered platform for decentralized film funding. It features a modern landing page for collecting email signups and is architected to scale into a complete end-to-end film financing platform.
+This repository contains the DeCine web application. The project is being developed as a broader product rather than presented as a finished, audited investment platform.
 
----
+## Product direction
 
-## 🌐 Overview
+- Discover film projects and review project information.
+- Connect a Web3 wallet to interact with the application.
+- Follow funding activity and investment-related information.
+- Support a producer workflow for proposing and managing projects.
+- Explore governance and project administration concepts.
 
-Built as a full-stack TypeScript application, DeCine includes:
+> **Project status:** Work in progress. Features and integrations may vary by branch and environment. Do not treat this repository as evidence that a live investment service or production-ready financial product is available.
 
-- 🔹 **Frontend**: React 18 + Vite + Tailwind + shadcn/ui
-- 🔹 **Backend**: Node.js + Express + PostgreSQL (via Drizzle ORM)
-- 🔹 **Monorepo Structure**: Client, Server, Shared Types
-- 🔹 **CI/CD**: GitHub Actions + GoDaddy Deployment (via SSH)
+## Application architecture
 
----
+The application is organized as a TypeScript full-stack codebase:
 
-## 🧱 Architecture
+| Layer | Technologies |
+|---|---|
+| Frontend | React 18, TypeScript, Vite |
+| UI | Tailwind CSS, Radix UI, shadcn/ui |
+| Data and forms | TanStack Query, React Hook Form, Zod |
+| Backend | Node.js, Express, TypeScript |
+| Database | PostgreSQL, Drizzle ORM |
+| Web3 integration | wagmi, ethers.js, RainbowKit |
 
-### 📦 Frontend
+The repository also contains shared application types/schema and database migration assets.
 
-| Feature              | Tool/Framework             |
-|----------------------|----------------------------|
-| Framework            | React 18 + TypeScript      |
-| Build Tool           | Vite                       |
-| UI System            | Radix UI + shadcn/ui       |
-| Styling              | Tailwind CSS               |
-| State Management     | TanStack Query             |
-| Form Validation      | React Hook Form + Zod      |
-| Routing              | Wouter                     |
+## Repository layout
 
-### ⚙️ Backend
-
-| Feature              | Tool/Framework             |
-|----------------------|----------------------------|
-| Runtime              | Node.js + TypeScript       |
-| Framework            | Express                    |
-| ORM                  | Drizzle ORM                |
-| DB                   | PostgreSQL (Neon)          |
-| Session Mgmt         | PostgreSQL-backed sessions |
-| Logging & Errors     | Centralized + Modular      |
-
----
-
-## 🗂️ Folder Structure
-
+```text
+client/       Frontend application
+server/       Backend API and application services
+shared/       Shared schemas and types
+migrations/   Database migrations
 ```
 
-/
-├── client/      # React frontend
-├── server/      # Express backend
-├── shared/      # Shared types and schema
-├── migrations/  # DB migrations
+## Local development
 
-````
+Requirements:
+- Node.js 18+
+- PostgreSQL
+- A Web3 wallet and RPC credentials for blockchain-dependent workflows
 
----
-
-## ✍️ Key Features
-
-- **Email Signup Flow**: Validated by Zod, submitted to a backend API
-- **Toast Feedback**: Real-time user feedback on submission
-- **Custom Theme Support**: Light/Dark mode with brand colors
-- **Accessibility**: WCAG-compliant components using Radix primitives
-- **Mobile Responsive**: Optimized for small screens
-
----
-
-## 🚀 Development Setup
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Configure the environment variables required by the application in a local `.env` file. Never commit credentials, private keys, or production secrets.
+
+Start the development environment:
+
+```bash
 npm run dev
-````
+```
 
-* Runs Vite dev server with hot reload
-* TypeScript + ESLint enforced
-
----
-
-## 🏗️ Build for Production
+Build:
 
 ```bash
 npm run build
 ```
 
-* Frontend is bundled using Vite
-* Backend compiled with `esbuild`
+Check the package scripts and environment configuration in the current branch for the exact commands and required variables.
 
----
+## Engineering focus
 
-## 🔐 Deployment
+The main engineering challenges explored by this project include:
+- Connecting conventional full-stack application workflows with wallet-based interactions.
+- Modeling project and investment-related data.
+- Keeping shared validation and types consistent across frontend and backend.
+- Designing an extensible architecture for future contract and governance integrations.
 
-Deployed automatically via GitHub Actions:
+## Security and limitations
 
-* Trigger: Push to `main` branch
-* CI: Installs deps → builds → uploads via SCP to GoDaddy VPS
-* Target: `/home/youruser/public_html`
+This repository should be reviewed together with its current code and configuration before use. A README feature description is not a security guarantee. Smart contracts and financial workflows require independent testing, threat modelling, and audit before any real-value use.
 
----
+## Maintainer
 
-## 📦 External Dependencies
+Built and maintained by **Hossein Sharafzad**.
 
-### Frontend
-
-* `react-hook-form`, `zod`, `radix-ui`, `lucide-react`
-* `date-fns`, `clsx`, `tailwind-merge`, `embla-carousel`
-
-### Backend
-
-* `drizzle-orm`, `express`, `pg`, `connect-pg-simple`
-* `tsx`, `esbuild` for efficient builds
-
----
-
-## 🧠 Scalability Notes
-
-* Backend and frontend are decoupled for future microservices
-* Serverless-ready PostgreSQL (Neon)
-* Session storage supports multi-instance deployment
-* Static assets can be served from CDN
-
----
-
-## 🔒 Environment
-
-* Use `.env` to define:
-
-  ```
-  DATABASE_URL=your-neon-db-url
-  SESSION_SECRET=your-secret
-  ```
-
-> ⚠️ Don’t commit `.env` — it’s ignored by `.gitignore`.
-
----
-
-## ✅ Status
-
-🧪 Currently in MVP phase: landing page + email signup live.
-🧱 Under development: auth, dashboard, smart contract integration.
-
----
-
-## 👨‍💻 Authors & Contributions
-
-Maintained by a full-stack blockchain developer.
-Designed for future team collaboration (developers, CTO, managers).
-
----
-
-Let me know if you’d like:
-
-* A full `.gitignore`
-* This `README.md` file exported
-* A GitHub Action YAML included in the repo structure
-
-I can also auto-generate your `deploy.yml` or push this for you if needed.
+For technical discussion, open a GitHub issue with a reproducible description.
